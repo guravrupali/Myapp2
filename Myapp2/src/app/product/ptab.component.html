@@ -1,0 +1,22 @@
+<table border="3" width="250" height="200">
+    <tr><th>pid</th>
+        <th>pname</th>
+        <th>price</th>
+    </tr>
+    <tr *ngFor="let p of parr">
+        <td>{{p.pid}}</td>
+        <td>{{p.pname}}</td>
+        <td>{{p.price}}</td>
+        <td>
+            <a (click)="deleteProduct(p)">Delete/</a>
+            <a (click)="updateProduct(p)">Edit</a>
+        </td>
+    </tr>
+</table><br>
+<button type="button" name="btn" (click)="displayForm()">Add Product</button>
+
+<div *ngIf="flag"> <!---handle event myevent here-->
+    <pform [upprod]="pob" (myevent)="flag=$event"></pform>
+    <!--also here we assign pob object to upprod property ...go to pform
+    and input that property-->
+</div>
